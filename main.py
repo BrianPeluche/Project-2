@@ -1,6 +1,8 @@
 #main.py
 from search_algorithms import forward_selection, backward_elimination
 from search_algorithms import stub
+from validator import validator
+from nearest_neighbor import NearestNeighbor
 
 def main():
     print("Welcome to Bertie Woosters bgarc208/hwhee004 Feature Selection Algorithm.\n")
@@ -14,6 +16,10 @@ def main():
         forward_selection(user_feat, stub)
     elif user_input == 2:
         backward_elimination(user_feat, stub)
+    elif user_input == 3:
+        classifier = NearestNeighbor()
+        val = validator(classifier)
+        
     else:
         print("Invalid")
 
