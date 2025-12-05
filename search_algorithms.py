@@ -1,8 +1,8 @@
 #search_algorithms.py
 import random
 # stub
-def stub(set):
-    return random.uniform(30.0, 80.0)
+# def stub(set):
+#     return random.uniform(30.0, 80.0)
 
 #Greedy Forward selection
 def forward_selection(feat_num, feat_idx):
@@ -10,7 +10,7 @@ def forward_selection(feat_num, feat_idx):
     best_set = []
     best_accuracy = feat_idx(curr_set)
 
-    print(f"Using no features and \"random\" evaluation, I get an accuracy of {best_accuracy:.1f}%\n")
+    # print(f"Using no features and \"random\" evaluation, I get an accuracy of {best_accuracy:.1f}%\n")
     print("Beginning search.\n")
 
     for level in range(1, feat_num + 1): # add feature one at a time
@@ -54,7 +54,7 @@ def backward_elimination(feat_num, feat_idx):
     best_set = curr_set.copy()
     best_accuracy = feat_idx(curr_set)
 
-    print(f"Using all features and \"random\" evaluation, I get an accuracy of {best_accuracy:.1f}%\n")
+    #print(f"Using all features and \"random\" evaluation, I get an accuracy of {best_accuracy:.1f}%\n")
     print("Beginning search.\n")
 
     for level in range(feat_num, 0, -1):
