@@ -1,3 +1,5 @@
+# nearest_neighbor.py
+import numpy as np
 class NearestNeighbor:
     def __init__(self):
         self.data_x = None
