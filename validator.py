@@ -1,7 +1,7 @@
 # validator.py
 import numpy as np
 
-class validator:
+class Validator:
     def __init__(self, classifier):
         self.classifier = classifier
 

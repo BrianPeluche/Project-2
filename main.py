@@ -4,7 +4,7 @@ import time
 
 from search_algorithms import forward_selection, backward_elimination
 from search_algorithms import stub
-from validator import validator
+from validator import Validator
 from nearest_neighbor import NearestNeighbor
 
 def load_dataset(dataset): # read  file, split into labels and features
@@ -37,6 +37,7 @@ def main():
         # type a filename 
         #dataset_path = user_inpt
         print("Invalid")
+        return
 
     X, y = load_dataset(dataset_path)
     X = normalize(X)
@@ -44,12 +45,12 @@ def main():
 
     print(f"\nThis dataset has {num_features} features.\n")
     print("\nType the number of the algorithm you want to run.\n")
-    print("\tForward Selection\n\tBackward Elimination\n\tonly features {3, 5, 7},\n\tonly features {3, 15, 27},\n")
+    print("\t1. Forward Selection\n\t2. Backward Elimination\n\t3. NN on features {3, 5, 7},\n\t4. NN on features {3, 15, 27},\n")
     
     classifier = NearestNeighbor()
-    val = validator(classifier)
+    val = Validator(classifier)
 
-    def accuracy(feature_set): # helper function for accuary hard coded features
+    def accuracy(feature_set): # helper function for accuracy hard coded features
         return val.leave_one_out_accuracy(X, y, feature_set)
     
     user_input = int(input("Please enter a number: "))
@@ -63,12 +64,12 @@ def main():
         feat = [3, 5, 7]   # hard coded
         acc = accuracy(feat)
         print("Using only feature(s) {3, 5, 7}") 
-        print(f" accuracy is {acc:.1f}%")
+        print(f"Accuracy is {acc:.1f}%")
     elif user_input == 4:
         feat = [1, 15, 27]   # hard coded
         acc = accuracy(feat)
         print("Using only feature(s) {1, 15, 27}") 
-        print(f" accuracy is {acc:.1f}%")
+        print(f"Accuracy is {acc:.1f}%")
     else:
         print("Invalid")
 
