@@ -42,7 +42,7 @@ def forward_selection(feat_num, feat_idx):
             else:
                 # Accuracy got worse compared to the best so far
                 features_str = ",".join(str(f) for f in curr_set)
-                print("(Warning, Accuracy has decreased!)\n")
+                print("(Warning, Accuracy has decreased! Continuing search in case of local maxima)\n")
 
     best_features_str = ",".join(str(f) for f in best_set)
     print(f"Finished search!! The best feature subset is {{{best_features_str}}}, " f"which has an accuracy of {best_accuracy:.1f}%")
@@ -82,7 +82,7 @@ def backward_elimination(feat_num, feat_idx):
                 print(f"Feature set {{{features_str}}} was best, accuracy is {best_accuracy_level:.1f}%\n")
             else:
                 features_str = ",".join(str(f) for f in curr_set)
-                print("(Warning, Accuracy has decreased!)\n")
+                print("(Warning, Accuracy has decreased! Continuing search in case of local maxima)\n")
 
     best_features_str = ",".join(str(f) for f in best_set)
     print(f"Finished search!! The best feature subset is {{{best_features_str}}}, " f"which has an accuracy of {best_accuracy:.1f}%")

@@ -8,6 +8,16 @@ from search_algorithms import forward_selection, backward_elimination
 from validator import Validator
 from nearest_neighbor import NearestNeighbor
 
+# Report
+# Group: Brian Garcia, Howard Wheeler, NETID> bgarc208, hwhee004 CS170 Project 2 Discussion Section 21
+# DatasetID: 211
+# Small Dataset Results:
+#   Forward Selection: Feature subset: {5, 3}, ACC: 92.0%
+#   Backward Elimination: Feature subset: {2, 4, 5, 7, 10}, ACC: 82.0%
+# Large Dataset Results:
+#  Forward Selection: Feature subset: {27, 1}, ACC: 95.5%
+#  Backward Elimination: Feature subset: {27}, ACC: 84.7%
+
 def load_dataset(dataset): # read  file, split into labels and features
     data = np.loadtxt(dataset)
     y = data[:, 0].astype(int)
